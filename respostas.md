@@ -1,8 +1,8 @@
 # Respostas · Avaliação Prática de Docker · ViaSerra Transportes (Turma C)
 
-Nome:
-Matrícula:
-Usuário do GitHub:
+Nome: Amabile Vitoria Albino Ferreira
+Matrícula: 26175063
+Usuário do GitHub: 
 Usuário do Docker Hub:
 
 Responda com as suas palavras e com o que aconteceu na SUA máquina. Resposta curta e certa vale mais
@@ -12,8 +12,14 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 1. Qual imagem base você usou e qual o tamanho final da imagem do portal (saída de `docker images`)?
 
+   Usei a imagem base `nginx:1.25-alpine`. O tamanho final da imagem gerada (`ferreiramabile/viaserra-portal:1.0-26175063`) é de aproximadamente 42.5 MB.
+
 2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para
    conferir que o `index.html` está lá dentro.
+
+   O Nginx procura os arquivos na pasta `/usr/share/nginx/html`.
+   Comando utilizado para conferir:
+   `docker run --rm ferreiramabile/viaserra-portal:1.0-26175063 ls -la /usr/share/nginx/html`
 
 ## Parte 2 · Docker Hub
 
