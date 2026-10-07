@@ -56,7 +56,16 @@ O segundo número (à direita dos dois pontos) é sempre a porta do container. E
 
 7. Escreva os dois comandos `docker run` que fariam o mesmo que o seu `docker-compose.yml`.
 
+Comandos equivalentes:
+- Portal:
+  `docker run -d -p 8063:80 --restart unless-stopped ferreiramabile/viaserra-portal:1.0-26175063`
+- Manutenção:
+  `docker run -d -p 7063:80 --restart unless-stopped ferreiramabile/viaserra-manutencao:1.0-26175063`
+
 8. Qual comando derruba os dois containers de uma vez?
+
+O comando é:
+`docker compose down`
 
 ## Verificador
 
