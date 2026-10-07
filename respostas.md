@@ -25,7 +25,14 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 3. Nome completo da imagem publicada e link público do repositório no Docker Hub.
 
+   Nome completo da imagem: `ferreiramabile/viaserra-portal:1.0-26175063`
+   Link público no Docker Hub: `https://hub.docker.com/r/ferreiramabile/viaserra-portal`
+
 4. Se você mudar o HTML, quais comandos precisa rodar para que a versão nova chegue ao Docker Hub?
+
+   É necessário refazer o build da imagem e enviar a nova versão para o repositório:
+   1. `docker build -t ferreiramabile/viaserra-portal:1.0-26175063 ./portal`
+   2. `docker push ferreiramabile/viaserra-portal:1.0-26175063`
 
 ## Parte 3 · Página de manutenção
 
