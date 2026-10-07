@@ -2,8 +2,8 @@
 
 Nome: Amabile Vitoria Albino Ferreira
 Matrícula: 26175063
-Usuário do GitHub: 
-Usuário do Docker Hub:
+Usuário do GitHub: amabileferreira54-bit
+Usuário do Docker Hub: ferreiramabile
 
 Responda com as suas palavras e com o que aconteceu na SUA máquina. Resposta curta e certa vale mais
 do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile vale zero.
