@@ -40,11 +40,17 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 | # | Instrução | O que estava errado | O que você viu acontecer | Como corrigiu |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | `WORKDIR /usr/share/nginx` | Faltava a pasta `/html` no caminho padrão do Nginx. | Os arquivos seriam salvos fora do diretório do site. | Alterado para `WORKDIR /usr/share/nginx/html`. |
+| 2 | `COPY pagina/ .` | A pasta `pagina/` não existia dentro de `manutencao`. | O build falhou com o erro `ERROR: "/pagina": not found`. | Alterado para `COPY . .`. |
+| 3 | `CMD ["nginx"]` | Faltava o parâmetro `-g "daemon off;"` para manter o Nginx rodando em primeiro plano. | O container finalizava imediatamente após iniciar. | Alterado para `CMD ["nginx", "-g", "daemon off;"]`. |
 
 6. Qual a diferença entre `-p 7042:80` e `-p 80:7042` no `docker run`? Qual dos dois números é a porta do container?
+
+A sintaxe utilizada é `-p <porta_do_host>:<porta_do_container>`.
+- `-p 7042:80`: Mapeia a porta 7042 da sua máquina (host) para a porta 80 do container.
+- `-p 80:7042`: Mapeia a porta 80 da sua máquina (host) para a porta 7042 do container.
+
+O segundo número (à direita dos dois pontos) é sempre a porta do container. Em `-p 7042:80`, a porta do container é a **80**.
 
 ## Parte 4 · Primeiro docker-compose
 
