@@ -40,8 +40,8 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 | # | Instrução | O que estava errado | O que você viu acontecer | Como corrigiu |
 |---|---|---|---|---|
-| 1 | `WORKDIR /usr/share/nginx` | Faltava a pasta `/html` no caminho padrão do Nginx. | Os arquivos seriam salvos fora do diretório do site. | Alterado para `WORKDIR /usr/share/nginx/html`. |
-| 2 | `COPY pagina/ .` | A pasta `pagina/` não existia dentro de `manutencao`. | O build falhou com o erro `ERROR: "/pagina": not found`. | Alterado para `COPY . .`. |
+| 1 | `WORKDIR /usr/share/nginx` | Faltava a pasta `/html` no caminho padrão do Nginx. | Os arquivos seriam salvos fora do diretório padrão do site. | Alterado para `WORKDIR /usr/share/nginx/html`. |
+| 2 | `COPY pagina/ .` | A pasta chamava-se `site/` e não `pagina/`. | O build falhou com o erro `ERROR: "/pagina": not found`. | Alterado para `COPY site/ .`. |
 | 3 | `CMD ["nginx"]` | Faltava o parâmetro `-g "daemon off;"` para manter o Nginx rodando em primeiro plano. | O container finalizava imediatamente após iniciar. | Alterado para `CMD ["nginx", "-g", "daemon off;"]`. |
 
 6. Qual a diferença entre `-p 7042:80` e `-p 80:7042` no `docker run`? Qual dos dois números é a porta do container?
@@ -69,8 +69,6 @@ O comando é:
 
 ## Verificador
 
-9. Código de conclusão impresso pelo verificador:
+9. Cole aqui o código de verificação gerado pelo script.
 
-```
-(cole aqui)
-```
+`VIASERRA-26175063-5653E282`
